@@ -15,15 +15,23 @@
   --font-family-noto-sans: "Noto Sans", sans-serif, -apple-system,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
     sans-serif;
+  --font-family-noto-sans-bold: "Noto Sans Bold", sans-serif, -apple-system,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+    sans-serif;
   --font-family-oswald: Oswald, "Noto Sans", sans-serif, -apple-system,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
     sans-serif;
+  --font-family-oswald-bold: "Oswald Bold", "Noto Sans", sans-serif,
+    -apple-system, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji", sans-serif;
+
   /* Font Sizes */
   --font-size-body-desktop: 18px;
   --font-size-h1-responsive: 32px;
   --font-size-h2-responsive: 24px;
   --font-size-body-responsive: 16px;
-  /* Sidebar */
+
+  /* SIDEBAR */
   --sidebar-width: 280px;
   --content-max-width: 860px;
 }
@@ -35,19 +43,38 @@
 }
 
 @font-face {
+  font-family: "Oswald";
+  src: local("Oswald"),
+    url(../fonts/oswald-v31-latin-regular.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald Bold";
+  src: local("Oswald Bold"),
+    url(../fonts/oswald-v31-latin-700.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/noto-sans-v9-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("Noto Sans"), local("NotoSans"),
-    url("../fonts/noto-sans-v9-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../fonts/noto-sans-v9-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */ url("../fonts/noto-sans-v9-latin-regular.woff")
-      format("woff"),
-    /* Modern Browsers */ url("../fonts/noto-sans-v9-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../fonts/noto-sans-v9-latin-regular.svg#NotoSans") format("svg"); /* Legacy iOS */
+  src: local("Noto Sans"),
+    url(../fonts/noto-sans-v9-latin-regular.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Bold";
+  src: local("Noto Sans Bold"),
+    url(../fonts/noto-sans-v9-latin-700.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Bold";
+  src: local("Noto Sans Bold"),
+    url(../fonts/noto-sans-v9-latin-700.woff2) format("woff2");
+  font-display: swap;
 }
 
 body {
@@ -57,6 +84,7 @@ body {
 }
 a {
   font-family: var(--font-family-noto-sans);
+  text-decoration: none;
 }
 h1,
 h2,
@@ -65,8 +93,7 @@ h4,
 h5,
 h6 {
   color: var(--bluePrimary);
-  font-family: var(--font-family-oswald);
-  font-weight: bold;
+  font-family: var(--font-family-oswald-bold);
 }
 
 h1 {
@@ -79,6 +106,12 @@ h2 {
 
 p {
   font-family: var(--font-family-noto-sans);
+  font-size: var(--font-size-body-desktop);
+}
+
+.read-more-link {
+  color: var(--bluePrimary);
+  font-family: var(--font-family-noto-sans-bold);
   font-size: var(--font-size-body-desktop);
 }
 
@@ -97,11 +130,12 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: var(--grey);
   display: block;
   float: left;
+  font-family: var(--font-family-noto-sans-bold);
   font-size: 18px;
-  padding: 25px;
+  padding: 25px 1em;
   margin: 0 1px;
   text-decoration: none;
 }
@@ -127,8 +161,8 @@ button {
   background: pink;
   display: flex;
   justify-content: space-between;
-  margin: 60px auto 0 auto;
-  margin-top: 60px;
+  margin: 60px auto 90px auto;
+  padding: 0 1em;
   width: 1200px;
 }
 
@@ -137,13 +171,58 @@ button {
 .blog-list {
   background: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   padding: 80px 0;
   width: 830px;
 }
 
+hr {
+  border: 1px solid #cccccc;
+  margin: 80px 0;
+  width: 100%;
+}
+
 .post {
+  margin: 0 auto;
   width: 600px;
+}
+
+.blog-post-title {
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+
+.date {
+  color: var(--bluePrimary);
+  font-family: var(--font-family-noto-sans);
+  font-size: var(--font-size-body-desktop);
+  margin-right: 10px;
+}
+
+.tag {
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-family: var(--font-family-noto-sans);
+  font-size: var(--font-size-body-desktop);
+  padding: 5px 10px;
+}
+
+.fa-tag {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.tag-orange {
+  background: var(--orange);
+}
+
+.tag-blue {
+  background: var(--blueSecondary);
+}
+
+.tag:not(:last-child) {
+  margin-right: 10px;
 }
 
 /* SIDEBAR */
