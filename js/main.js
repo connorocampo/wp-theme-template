@@ -25,12 +25,23 @@ window.onclick = function (toggle) {
 };
 
 // followandrew function
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 1) {
-      $(".page-title").addClass("sticky");
-    } else {
-      $(".page-title").removeClass("sticky");
-    }
+// $(document).ready(function () {
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() > 1) {
+//       $(".page-title").addClass("sticky");
+//     } else {
+//       $(".page-title").removeClass("sticky");
+//     }
+//   });
+// });
+
+// ADD ACTIVE CLASS TO NAV LINKS WHEN SELECTED
+
+let navLink = document.querySelectorAll('.selectedLink');
+
+navLink.forEach(selectedLink => {
+  selectedLink.addEventListener("click", function () {
+    navLink.forEach(btn => btn.classList.remove("selected"));
+    this.classList.add("selected");
   });
 });
