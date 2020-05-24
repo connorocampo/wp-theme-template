@@ -1,7 +1,8 @@
 :root {
-  --bluePrimary: #34364c;
-  --blueSecondary: #6991ac;
+  --black: #22272d;
+  --blueSecondary: #34364c;
   --blueTertiary: #468ee2;
+  --aqua: #5ab6d5;
   --grey: #f5f5f5;
   --orange: #d75c37;
   --yellow: #ffc046;
@@ -12,18 +13,21 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-noto-sans: "Noto Sans", sans-serif, -apple-system,
+
+  /* FONT STYLES */
+
+  --font-family-open-sans: "Open Sans", sans-serif, -apple-system,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
     sans-serif;
-  --font-family-noto-sans-bold: "Noto Sans Bold", sans-serif, -apple-system,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
-    sans-serif;
-  --font-family-oswald: Oswald, "Noto Sans", sans-serif, -apple-system,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
-    sans-serif;
-  --font-family-oswald-bold: "Oswald Bold", "Noto Sans", sans-serif,
+  --font-family-open-sans-bold: "Open Sans Bold", "Noto Sans Bold", sans-serif,
     -apple-system, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji", sans-serif;
+  --font-family-domine: "Domine", Arial, sans-serif, -apple-system,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+    sans-serif;
+  --font-family-domine-bold: "Domine Bold", Arial, sans-serif, -apple-system,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
+    sans-serif;
 
   /* Font Sizes */
   --font-size-body-desktop: 18px;
@@ -43,37 +47,44 @@
 }
 
 @font-face {
-  font-family: "Oswald";
-  src: local("Oswald"),
-    url(../fonts/oswald-v31-latin-regular.woff) format("woff");
+  font-family: "Domine";
+  src: local("Domine"),
+    url(../fonts/domine-v7-latin-regular.woff) format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Oswald Bold";
-  src: local("Oswald Bold"),
-    url(../fonts/oswald-v31-latin-700.woff) format("woff");
+  font-family: "Domine Bold";
+  src: local("Domine Bold"),
+    url(../fonts/domine-v7-latin-700.woff) format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Noto Sans";
-  src: local("Noto Sans"),
-    url(../fonts/noto-sans-v9-latin-regular.woff) format("woff");
+  font-family: "Open Sans";
+  src: local("Open Sans"),
+    url(../fonts/open-sans-v17-latin-regular.woff) format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Noto Sans Bold";
-  src: local("Noto Sans Bold"),
-    url(../fonts/noto-sans-v9-latin-700.woff) format("woff");
+  font-family: "Open Sans Italic";
+  src: local("Open Sans Italic"),
+    url(../fonts/open-sans-v17-latin-italic.woff) format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Noto Sans Bold";
-  src: local("Noto Sans Bold"),
-    url(../fonts/noto-sans-v9-latin-700.woff2) format("woff2");
+  font-family: "Open Sans Bold";
+  src: local("Open Sans Bold"),
+    url(../fonts/open-sans-v17-latin-700.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans Black";
+  src: local("Open Sans Black"),
+    url(../fonts/open-sans-v17-latin-800.woff) format("woff");
   font-display: swap;
 }
 
@@ -83,7 +94,7 @@ body {
   padding: 0;
 }
 a {
-  font-family: var(--font-family-noto-sans);
+  font-family: var(--font-family-open-sans);
   text-decoration: none;
 }
 h1,
@@ -92,8 +103,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--bluePrimary);
-  font-family: var(--font-family-oswald-bold);
+  color: var(--black);
+  font-family: var(--font-family-domine);
 }
 
 h1 {
@@ -105,14 +116,14 @@ h2 {
 }
 
 p {
-  font-family: var(--font-family-noto-sans);
+  font-family: var(--font-family-open-sans);
   font-size: var(--font-size-body-desktop);
   line-height: 1.75;
 }
 
 .read-more-link {
-  color: var(--bluePrimary);
-  font-family: var(--font-family-noto-sans-bold);
+  color: var(--black);
+  font-family: var(--font-family-open-sans-bold);
   font-size: var(--font-size-body-desktop);
 }
 
@@ -127,6 +138,9 @@ header {
 }
 
 nav {
+  /* align-items: center;
+  display: flex;
+  justify-content: space-between; */
   overflow: hidden;
   width: var(--breakpoint-xl);
 }
@@ -135,17 +149,21 @@ nav a {
   color: var(--grey);
   display: block;
   float: left;
-  font-family: var(--font-family-noto-sans-bold);
+  font-family: var(--font-family-open-sans-bold);
   font-size: 18px;
-  padding: 25px 1em;
+  padding: 20px 1em;
   margin: 0 1px;
   text-decoration: none;
 }
 
 .nav-links {
   float: right;
-  font-weight: bold;
+  margin-top: 10px;
   text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--yellow);
 }
 
 button {
@@ -195,8 +213,8 @@ hr {
 }
 
 .date {
-  color: var(--bluePrimary);
-  font-family: var(--font-family-noto-sans);
+  color: var(--black);
+  font-family: var(--font-family-open-sans);
   font-size: var(--font-size-body-desktop);
   margin-right: 10px;
 }
@@ -205,7 +223,7 @@ hr {
   border-radius: 5px;
   color: #fff;
   display: inline-block;
-  font-family: var(--font-family-noto-sans);
+  font-family: var(--font-family-open-sans);
   font-size: var(--font-size-body-desktop);
   margin-bottom: 10px;
   padding: 5px 10px;
@@ -224,8 +242,12 @@ hr {
   background: var(--blueSecondary);
 }
 
+.tag-aqua {
+  background: var(--aqua);
+}
+
 .tag-blue-primary {
-  background: var(--bluePrimary);
+  background: var(--black);
 }
 
 .tag-yellow {
@@ -252,19 +274,18 @@ hr {
 }
 
 .sidebar-header {
-  color: var(--bluePrimary);
+  color: var(--black);
   margin-top: 0;
   margin-bottom: 15px;
   padding: 0;
-  text-transform: uppercase;
 }
 
 .sidebar-header:not(:first-child) {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .sidebar p {
-  color: var(--bluePrimary);
+  color: var(--black);
 }
 
 .search-box {
@@ -274,19 +295,24 @@ hr {
 .search-input {
   border: 1px solid #eee;
   border-radius: 5px;
+  font-size: var(--font-size-body-desktop);
   height: 40px;
   width: 100%;
 }
 
+.search-input[type="text"] {
+  padding: 0 0.5em;
+}
+
 .fa-search {
-  color: var(--bluePrimary);
+  color: var(--black);
   position: relative;
   top: -28px;
   left: 255px;
 }
 
 .sidebar-recent-post {
-  color: var(--bluePrimary);
+  color: var(--black);
   line-height: 1.75;
 }
 
@@ -305,7 +331,7 @@ hr {
 }
 
 .social-media-link {
-  background: var(--bluePrimary);
+  background: var(--black);
   color: var(--grey);
   border-radius: 50%;
   display: inline-block;
@@ -357,7 +383,7 @@ hr {
 
   #nav.responsive a:hover {
     background: #fff;
-    color: var(--bluePrimary);
+    color: var(--black);
   }
 
   .main-content {
