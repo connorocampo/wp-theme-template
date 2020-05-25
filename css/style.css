@@ -345,6 +345,10 @@ hr {
   width: 45px;
 }
 
+.social-media-link:hover {
+  color: var(--yellow);
+}
+
 .social-media-link:not(:last-child) {
   margin-right: 10px;
 }
@@ -404,12 +408,8 @@ footer {
   width: var(--breakpoint-xl);
 }
 
-.footer-vredit-link {
+.footer-credit-link {
   color: var(--yellow);
-}
-
-.footer-vredit-link:hover {
-  text-decoration: underline;
 }
 
 /* BREAKPOINT FOR XL SCREENS */
