@@ -412,6 +412,26 @@ footer {
   color: var(--yellow);
 }
 
+.fa-heart {
+  color: var(--red);
+  margin: 0 3px;
+  animation-name: heart;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes heart {
+  0% {
+    -webkit-transform: scale(0.85);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+  }
+}
+
 /* BREAKPOINT FOR XL SCREENS */
 
 @media only screen and (max-width: 1200px) {
