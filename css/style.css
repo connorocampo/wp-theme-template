@@ -187,7 +187,6 @@ nav a {
 /* MAIN CONTENT  */
 
 .main-content {
-  /* background: pink; */
   display: flex;
   justify-content: space-between;
   margin: 60px auto 90px auto;
@@ -471,6 +470,8 @@ footer {
   display: flex;
   flex-direction: column;
   height: fit-content;
+  height: min-content;
+  flex: 0 0 auto;
   padding: 80px 0;
   width: 830px;
 }
