@@ -115,6 +115,10 @@ h2 {
   font-size: 28px;
 }
 
+h3 {
+  font-size: 24px;
+}
+
 p {
   font-family: var(--font-family-open-sans);
   font-size: var(--font-size-body-desktop);
@@ -455,6 +459,22 @@ footer {
   }
 }
 
+/* PAGE STYLES */
+
+.page {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.page-container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 80px 0;
+  width: 830px;
+}
+
 /* BREAKPOINT FOR XL SCREENS */
 
 @media only screen and (max-width: 1200px) {
@@ -505,7 +525,8 @@ footer {
 
   .featured-image,
   .blog-post-title,
-  .excerpt {
+  .excerpt,
+  .page-title {
     width: 80vw;
   }
 
