@@ -127,6 +127,10 @@ p {
   font-size: var(--font-size-body-desktop);
 }
 
+.read-more-link:hover {
+  border-bottom: 1px solid #ffc046;
+}
+
 /* NAVIGATION */
 
 header {
@@ -521,10 +525,6 @@ footer {
     margin-top: 100px;
   }
 
-  .fa-search {
-    /* right: 10px; */
-  }
-
   /* FOOTER */
 
   .footer-content {
@@ -548,6 +548,25 @@ footer {
 
   .footer-credit p {
     width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 115px;
+  }
+
+  .blog-list {
+    padding: 25px 0;
+  }
+
+  .pagination {
+    top: 100px;
+  }
+
+  .date {
+    display: block;
+    margin-bottom: 10px;
   }
 }
 
