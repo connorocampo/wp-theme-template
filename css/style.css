@@ -481,7 +481,6 @@ table {
   font-size: 16px;
   margin: 40px auto;
   text-align: center;
-  width: 600px;
 }
 
 th {
@@ -489,7 +488,7 @@ th {
   color: var(--grey);
   font-family: var(--font-family-open-sans-bold);
   font-size: var(--font-size-body-desktop);
-  padding: 15px;
+  padding: 15px 25px;
 }
 
 td {
@@ -542,21 +541,28 @@ td {
   }
 
   .blog-list,
-  .sidebar {
+  .sidebar,
+  .page-container {
     width: auto;
   }
 
   .featured-image,
   .blog-post-title,
   .excerpt,
-  .page-title {
+  .page-title,
+  .page-paragraph {
     width: 80vw;
   }
 
-  .post {
+  .post,
+  .page {
     padding: 0 1em;
     margin: 0 auto;
     width: auto;
+  }
+
+  table {
+    width: 80vw;
   }
 
   .pagination {
@@ -595,12 +601,13 @@ td {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main-content {
     margin-top: 115px;
   }
 
-  .blog-list {
+  .blog-list,
+  .page-container {
     padding: 25px 0;
   }
 
@@ -611,6 +618,10 @@ td {
   .date {
     display: block;
     margin-bottom: 10px;
+  }
+
+  table {
+    padding: 0 2em;
   }
 }
 
