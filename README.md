@@ -1,11 +1,10 @@
-# Blog Site Template
-This is a free blog site template based on Bootstrap 4.
+# WP Binge Blog Template
 
-It has a left sidebar and is customizable via CSS variables (custom properties)
+This is a HTML, CSS, and JavaScript blog template for the website WPBinge.com. This template will be converted into a custom WordPress theme.
 
-Watch the entire creation of this template on scrimba here: or see the conversion of this tempalte to a WordPress theme here: 
-
+You're welcome to clone/copy the code and use it in your own projects.
 
 ## Versions
-* 1.0
-  * Initial release
+
+- 1.0
+  - Initial release
