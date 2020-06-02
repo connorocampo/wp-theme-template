@@ -550,7 +550,8 @@ td {
   .blog-post-title,
   .excerpt,
   .page-title,
-  .page-paragraph {
+  .page-paragraph,
+  .post-content {
     width: 80vw;
   }
 
